@@ -9,6 +9,7 @@ import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentSettingsBinding
 import de.rki.coronawarnapp.ui.doNavigate
 import de.rki.coronawarnapp.util.di.AutoInject
+import de.rki.coronawarnapp.util.ui.generateChildrenIds
 import de.rki.coronawarnapp.util.ui.observe2
 import de.rki.coronawarnapp.util.ui.popBackStack
 import de.rki.coronawarnapp.util.ui.viewBinding
@@ -43,6 +44,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), AutoInject {
             binding.analyticsState = it
         }
 
+        binding.toolbar.generateChildrenIds()
         setButtonOnClickListener()
     }
 

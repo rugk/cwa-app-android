@@ -22,6 +22,7 @@ import de.rki.coronawarnapp.util.ui.viewBinding
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModelFactoryProvider
 import de.rki.coronawarnapp.util.viewmodel.cwaViewModels
 import de.rki.coronawarnapp.ui.submission.tan.SubmissionTanViewModel.TanApiRequestState
+import de.rki.coronawarnapp.util.ui.generateChildrenIds
 import javax.inject.Inject
 
 /**
@@ -74,6 +75,7 @@ class SubmissionTanFragment : Fragment(R.layout.fragment_submission_tan), AutoIn
                 submissionTanButtonEnter.hideKeyboard()
                 viewModel.startTanSubmission()
             }
+            toolbar.generateChildrenIds()
             toolbar.setNavigationOnClickListener { goBack() }
         }
 

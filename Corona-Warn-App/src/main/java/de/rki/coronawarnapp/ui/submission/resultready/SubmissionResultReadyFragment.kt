@@ -14,6 +14,7 @@ import de.rki.coronawarnapp.ui.submission.SubmissionCancelDialog
 import de.rki.coronawarnapp.ui.submission.viewmodel.SubmissionNavigationEvents
 import de.rki.coronawarnapp.util.di.AutoInject
 import de.rki.coronawarnapp.util.ui.doNavigate
+import de.rki.coronawarnapp.util.ui.generateChildrenIds
 import de.rki.coronawarnapp.util.ui.observe2
 import de.rki.coronawarnapp.util.ui.viewBinding
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModelFactoryProvider
@@ -47,8 +48,8 @@ class SubmissionResultReadyFragment : Fragment(R.layout.fragment_submission_resu
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backCallback)
-
         setButtonOnClickListener()
+        binding.toolbar.generateChildrenIds()
 
         viewModel.routeToScreen.observe2(this) {
             when (it) {

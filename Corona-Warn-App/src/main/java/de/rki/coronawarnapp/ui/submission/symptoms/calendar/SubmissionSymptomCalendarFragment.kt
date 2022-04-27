@@ -15,6 +15,7 @@ import de.rki.coronawarnapp.util.di.AutoInject
 import de.rki.coronawarnapp.util.formatter.formatSymptomBackgroundButtonStyleByState
 import de.rki.coronawarnapp.util.formatter.formatSymptomButtonTextStyleByState
 import de.rki.coronawarnapp.util.ui.doNavigate
+import de.rki.coronawarnapp.util.ui.generateChildrenIds
 import de.rki.coronawarnapp.util.ui.observe2
 import de.rki.coronawarnapp.util.ui.viewBinding
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModelFactoryProvider
@@ -70,6 +71,7 @@ class SubmissionSymptomCalendarFragment :
             updateButtons(it)
         }
 
+        binding.toolbar.generateChildrenIds()
         binding.toolbar.setNavigationOnClickListener { viewModel.onCalendarPreviousClicked() }
     }
 
