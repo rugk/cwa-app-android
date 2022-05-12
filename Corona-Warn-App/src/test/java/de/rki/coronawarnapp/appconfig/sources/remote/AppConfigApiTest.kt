@@ -1,13 +1,10 @@
 package de.rki.coronawarnapp.appconfig.sources.remote
 
-import android.content.Context
 import de.rki.coronawarnapp.appconfig.AppConfigModule
 import de.rki.coronawarnapp.appconfig.download.AppConfigApiV2
 import de.rki.coronawarnapp.environment.download.DownloadCDNModule
 import de.rki.coronawarnapp.http.HttpModule
 import io.kotest.matchers.shouldBe
-import io.mockk.MockKAnnotations
-import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking
 import okhttp3.Cache
 import okhttp3.ConnectionSpec
@@ -22,8 +19,6 @@ import java.util.concurrent.TimeUnit
 
 class AppConfigApiTest : BaseIOTest() {
 
-    @MockK private lateinit var context: Context
-
     private lateinit var webServer: MockWebServer
     private lateinit var serverAddress: String
     private lateinit var cache: Cache
@@ -32,8 +27,6 @@ class AppConfigApiTest : BaseIOTest() {
 
     @BeforeEach
     fun setup() {
-        MockKAnnotations.init(this)
-
         cache = Cache(File(testDir, "cache"), 1024L)
 
         webServer = MockWebServer()
@@ -50,7 +43,6 @@ class AppConfigApiTest : BaseIOTest() {
     private fun createAPI(): AppConfigApiV2 {
         val httpModule = HttpModule()
         val defaultHttpClient = httpModule.defaultHttpClient()
-        val gsonConverterFactory = httpModule.provideGSONConverter()
 
         val cdnHttpClient = DownloadCDNModule()
             .cdnHttpClient(defaultHttpClient)
@@ -61,7 +53,6 @@ class AppConfigApiTest : BaseIOTest() {
         return AppConfigModule.provideAppConfigApi(
             client = cdnHttpClient,
             url = serverAddress,
-            gsonConverterFactory = gsonConverterFactory,
             cache = cache,
         )
     }
