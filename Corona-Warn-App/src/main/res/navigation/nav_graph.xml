@@ -194,7 +194,7 @@
         tools:layout="@layout/fragment_submission_test_result_available">
         <action
             android:id="@+id/action_submissionTestResultAvailableFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
@@ -264,7 +264,7 @@
         tools:layout="@layout/fragment_submission_no_consent_positive_other_warning">
         <action
             android:id="@+id/action_submissionResultPositiveOtherWarningNoConsentFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
@@ -295,7 +295,7 @@
             app:argType="de.rki.coronawarnapp.coronatest.type.BaseCoronaTest$Type" />
         <action
             android:id="@+id/action_submissionResultReadyFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
@@ -324,13 +324,13 @@
             app:destination="@id/submissionSymptomCalendarFragment" />
         <action
             android:id="@+id/action_submissionSymptomIntroductionFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_submissionSymptomIntroductionFragment_to_submissionDoneFragment"
             app:destination="@id/submissionDoneFragment"
-            app:popUpTo="@id/status_nav_graph"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="false" />
     </fragment>
     <fragment
@@ -352,14 +352,14 @@
             app:destination="@id/submissionResultPositiveOtherWarningNoConsentFragment" />
         <action
             android:id="@+id/action_submissionSymptomCalendarFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/nav_graph"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_submissionSymptomCalendarFragment_to_submissionDoneFragment"
             app:destination="@id/submissionDoneFragment"
-            app:popUpTo="@id/status_nav_graph"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/submissionConsentFragment"
@@ -385,7 +385,7 @@
         android:label="SubmissionTestResultConsentFragment">
         <action
             android:id="@+id/action_submissionTestResultConsentGivenFragment_to_homeFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
@@ -402,7 +402,7 @@
         tools:layout="@layout/fragment_submission_test_result_positive_no_consent">
         <action
             android:id="@+id/action_submissionTestResultNoConsentFragment_to_homeFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <action
@@ -568,9 +568,9 @@
 
         <action
             android:id="@+id/action_recyclerBinOverviewFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
-            app:popUpTo="@id/status_nav_graph"
-            app:popUpToInclusive="false" />
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <!-- Settings -->
@@ -648,7 +648,9 @@
         tools:layout="@layout/fragment_settings_reset">
         <action
             android:id="@+id/action_settingsResetFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph" />
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <!-- Information -->
@@ -772,7 +774,7 @@
         <action
             android:id="@+id/action_submissionTanFragment_to_submissionTestResultPendingFragment"
             app:destination="@id/submissionTestResultPendingFragment"
-            app:popUpTo="@id/status_nav_graph"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_submissionTanFragment_to_submissionDeletionWarningFragment"
@@ -780,7 +782,7 @@
         <action
             android:id="@+id/action_submissionTanFragment_to_submissionTestResultNoConsentFragment"
             app:destination="@id/submissionTestResultNoConsentFragment"
-            app:popUpTo="@id/status_nav_graph"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="false" />
     </fragment>
 
@@ -807,8 +809,8 @@
         <action
             android:id="@+id/action_newReleaseInfoFragment_to_onboardingDeltaNotificationsFragment"
             app:destination="@id/onboardingDeltaNotificationsFragment"
-            app:popUpTo="@id/status_nav_graph"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/surveyConsentFragment"
@@ -901,7 +903,7 @@
         <action
             android:id="@+id/action_submissionDeletionFragment_to_submissionTestResultNoConsentFragment"
             app:destination="@id/submissionTestResultNoConsentFragment"
-            app:popUpTo="@id/status_nav_graph"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_submissionDeletionWarningFragment_to_submissionTestResultPendingFragment"
@@ -911,7 +913,7 @@
         <action
             android:id="@+id/action_submissionDeletionWarningFragment_to_submissionTestResultAvailableFragment"
             app:destination="@id/submissionTestResultAvailableFragment"
-            app:popUpTo="@id/status_nav_graph"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_submissionDeletionWarningFragment_to_submissionConsentFragment"
@@ -938,20 +940,20 @@
         tools:layout="@layout/check_ins_consent_fragment">
         <action
             android:id="@+id/action_checkInsConsentFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_checkInsConsentFragment_to_submissionResultReadyFragment"
             app:destination="@id/submissionResultReadyFragment"
-            app:popUpTo="@id/status_nav_graph"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="false" />
 
         <action
             android:id="@+id/action_checkInsConsentFragment_to_submissionTestResultConsentGivenFragment"
             app:destination="@id/submissionTestResultConsentGivenFragment"
-            app:popUpTo="@id/status_nav_graph"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="false" />
         <argument
             android:name="testType"
@@ -965,7 +967,7 @@
         tools:layout="@layout/fragment_submission_done">
         <action
             android:id="@+id/action_submissionDoneFragment_to_mainFragment"
-            app:destination="@id/status_nav_graph"
+            app:destination="@id/mainOverviewFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <argument
@@ -1009,8 +1011,8 @@
         <action
             android:id="@+id/action_onboardingDeltaNotificationsFragment_to_onboardingDeltaAnalyticsFragment"
             app:destination="@id/onboardingDeltaAnalyticsFragment"
-            app:popUpTo="@id/status_nav_graph"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>
