@@ -115,7 +115,11 @@ class SubmissionTestResultNegativeFragment : Fragment(R.layout.fragment_submissi
                 // test certificate state
                 when (uiState.certificateState) {
                     SubmissionTestResultNegativeViewModel.CertificateState.NOT_REQUESTED -> {
-                        testResultStepsRemoveTest.setIsFinal(true)
+                        if (coronaTest is FamilyCoronaTest) {
+                            testResultStepsNegativeResult.setIsFinal(true)
+                        } else {
+                            testResultStepsRemoveTest.setIsFinal(true)
+                        }
                         testResultStepsTestCertificate.isGone = true
                         testCertificateCard.isGone = true
                     }
